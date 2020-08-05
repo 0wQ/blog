@@ -1,0 +1,13 @@
+{
+    "editor.detectIndentation": true,
+    "files.eol": "\n",
+    "[javascript]": {
+        "editor.tabSize": 2,
+    },
+    "[html]": {
+        "editor.tabSize": 2,
+    },
+    "[xml]": {
+        "editor.tabSize": 2,
+    },
+}

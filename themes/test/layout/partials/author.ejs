@@ -1,0 +1,6 @@
+<article class="author">
+  <%- image_tag(theme.img.avator, { alt: config.author, class: 'author_image is-unselectable' }).replace(/src="/i, 'loading="lazy" src="') %>
+  <h1 class="author_site-title"><%= config.title %></h1>
+  <p class="author_intro"><%= config.description %></p>
+  <p class="author_links is-unselectable"><%- partial('partials/author_links') %></p>
+</article>

@@ -1,0 +1,51 @@
+<%
+const categoriesList = list_categories({ show_count: false });
+const tagsList = list_tags({ show_count: false });
+const archivesList = list_archives({ show_count: false, format: 'YYYY/MM' });
+%>
+
+<% if (is_year() === false) { %>
+
+<% if (theme.atom !== undefined) { %>
+<article class="post is-space-bottom">
+  <p>
+    The feed is available via
+    <a href="<%= theme.atom %>">atom</a>.
+  </p>
+  <br>
+</article>
+<% } %>
+
+
+<% if (archivesList !== "") { %>
+<article class="post is-space-bottom">
+  <h1>Archives</h1>
+  <%- archivesList %>
+</article>
+<% } %>
+
+<% if (categoriesList !== "") { %>
+<article class="post is-space-bottom">
+  <h1>Categories</h1>
+  <%- categoriesList %>
+</article>
+<% } %>
+
+
+<% if (tagsList !== "") { %>
+<article class="post is-space-bottom">
+  <h1>Tags</h1>
+  <%- tagsList %>
+</article>
+<% } %>
+
+<% } else { %>
+
+<h1 class="archive-title is-text-center is-space-bottom">Archive:
+  <%= page.year + (page.month ? ('/' + (page.month+'').padStart(2, '0')) : '') %></h1>
+
+<%- partial('partials/posts') %>
+
+<%- partial('partials/paginator') %>
+
+<% } %>

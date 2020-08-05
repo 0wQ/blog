@@ -1,0 +1,16 @@
+<article class="posts">
+  <% if (page.posts.length > 0) { %>
+  <% page.posts.each(post => { %>
+  <section class="post-card">
+    <%- partial('partials/post-header', { post: post }) %>
+    <article class="post-card_content">
+      <h2 class="post-card_title"><%= post.title %></h2>
+      <p class="post-card_description">hahahahahaha......</p>
+      <%- partial('partials/meta', { post: post, class_name: 'post-meta' }) %>
+      <%- partial('partials/tags', { post: post, class_name: 'post-tags' }) %>
+      <%- link_to(post.path, post.title, { class: 'post-card_link' }) %>
+    </article>
+  </section>
+  <% }) %>
+  <% } %>
+</article>

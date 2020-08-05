@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="<%= page.language || config.language || theme.language %>">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= _page_title(page) %></title>
+  <%- favicon_tag(theme.img.favicon) %>
+  <%- css('/css/style.css') %>
+</head>
+
+<body data-theme="light">
+  <script>
+    ; (function () {
+      window.__onThemeChange = function () { }
+      function setTheme(newTheme) {
+        window.__theme = newTheme
+        preferredTheme = newTheme
+        document.body.setAttribute('data-theme', newTheme)
+        window.__onThemeChange(newTheme)
+      }
+
+      var preferredTheme
+      try {
+        preferredTheme = localStorage.getItem('theme')
+      } catch (err) { }
+
+      window.__setPreferredTheme = function (newTheme) {
+        setTheme(newTheme)
+        try {
+          localStorage.setItem('theme', newTheme)
+        } catch (err) { }
+      }
+
+      var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      darkQuery.addListener(function (e) {
+        window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+      })
+
+      setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+    })()
+  </script>
+  <%- partial('partials/header', { }, { cache: true }) %>
+
+  <main class="main">
+    <%- body %>
+  </main>
+
+  <%- partial('partials/footer', { }, { cache: true }) %>
+
+  <script>
+    window.searchPath = '<%= url_for(config.search.path || "search.json") %>';
+    window.lazyLoadOptions = {
+      elements_selector: '.lazy',
+      // elements_selector: '[loading="lazy"]',
+      // threshold: 300,
+      threshold: 100,
+    };
+  </script>
+  <%- js([
+    '/js/app.js',
+    '//cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js',
+    { src:  '/js/sprite.js', async: true },
+    { src:  '/js/search.js', async: true },
+    { src: '//cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js', async: true}
+  ]) %>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99645562-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-99645562-2');
+  </script>
+</body>
+
+</html>

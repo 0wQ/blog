@@ -1,0 +1,9 @@
+<p class="<%= class_name %>">
+  <span title="<%= moment(post.date) %>">Posted <time id="date" datetime="<%= moment(post.date) %>"><%- date(post.date) %></time></span>
+  <% if (post.last_edited_date !== undefined && post.last_edited_date !== null) { %>
+  &middot; <span title="<%= moment(post.last_edited_date) %>">Last edited <time id="last_edited_date" datetime="<%= moment(post.last_edited_date) %>"><%- date(post.last_edited_date) %></time></span>
+  <% } %>
+  &middot; <%= wordcount(post.content) %> words
+  &middot; <strong><%= min2read(post.content) %> min read</strong>
+  &middot; <span class="views" id="views" data-path="<%= url_for(post.path) %>"><svg class="svg-inline--fa fa-spinner fa-w-16 fa-pulse" role="img"><use xlink:href="#svg-views" /></svg></span> views
+</p>

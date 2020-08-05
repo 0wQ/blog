@@ -1,0 +1,33 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-left">
+      <%- link_to('/', config.title, {class: 'site-title'}) %>
+    </div>
+    <div class="navbar-right">
+      <div class="search">
+        <svg class="icon-search">
+          <use xlink:href="#svg-search" />
+        </svg>
+      </div>
+      <div class="searchbox" style="display: none;">
+        <div class="searchbox-container">
+          <div class="searchbox-header">
+            <div class="searchbox-input-container">
+              <input class="searchbox-input" type="text" placeholder="Type something...">
+              <a class="searchbox-close" href="javascript:;">×</a>
+            </div>
+          </div>
+          <div class="searchbox-body"></div>
+        </div>
+      </div>
+      <div id="toggle-theme" class="toggle-theme">
+        <svg id="moon" class="icon-moon">
+          <use xlink:href="#svg-moon" />
+        </svg>
+        <svg id="sun" class="icon-sun is-hidden">
+          <use xlink:href="#svg-sun" />
+        </svg>
+      </div>
+    </div>
+  </nav>
+</header>

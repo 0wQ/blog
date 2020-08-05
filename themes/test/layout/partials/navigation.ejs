@@ -1,0 +1,13 @@
+<nav class="post-navigation">
+  <% if (post.prev) { %>
+  <div class="post-navigation_prev">
+    <%- link_to(post.prev.path, post.prev.title) %>
+  </div>
+  <% } %>
+
+  <% if (post.next) { %>
+  <div class="post-navigation_next">
+    <%- link_to(post.next.path, post.next.title) %>
+  </div>
+  <% } %>
+</nav>

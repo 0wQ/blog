@@ -1,0 +1,19 @@
+language: en
+
+menu:
+  Home: /
+  Archives: /archives/
+  Categories: /categories/
+  Tags: /tags/
+  About: /about/
+
+img:
+  favicon: /img/avatar.png
+  avator: /img/avatar.png
+
+links:
+  Hexo: 'https://hexo.io'
+  PPOffice: 'https://github.com/ppoffice'
+
+less:
+  compress: false

@@ -1,0 +1,11 @@
+<% if (!(page.prev == 0 && page.next == 0)) { %>
+<nav class="paginator is-unselectable">
+  <%- paginator({
+    prev_text: '<',
+    next_text: '>',
+    end_size: 1,
+    mid_size: 1,
+    escape: true
+  }) %>
+</nav>
+<% } %>

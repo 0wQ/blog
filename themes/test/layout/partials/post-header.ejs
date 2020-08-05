@@ -1,0 +1,20 @@
+<% if (post.featured_image !== undefined && post.featured_image !== null) { %>
+<div class="post-header">
+  <%- image_tag(url_for(post.featured_image), { alt: post.title, class: 'post-header_image' })
+  .replace(/<img(\s*?)src="(.*?)"(.*?)>/i, (str, p1, p2, p3) => {
+    let loadingImage = post.featured_image_small || config.lazyload.loadingImg || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    let className = config.lazyload.className || 'lazy';
+    // if (/myqcloud.com/gi.test(p2)) {
+    //   loadingImage = p2.replace(/\?.*$/gi, '') + '?imageMogr2/format/jpg/strip/thumbnail/32x/quality/75/interlace/1';
+    // }
+    if (/class="(.*?)"/gi.test(str)) {
+      str = str.replace(p3, `${p3} srcset="${loadingImage}" data-srcset="${p2}"`);
+      return str.replace(/class="(.*?)"/gi, (classStr, p1) => {
+        return classStr.replace(p1, `${p1} ${className}`);
+      })
+    }
+    return str.replace(p3, `${p3} class="${className}" srcset="${loadingImage}" data-srcset="${p2}"`);
+  })
+  %>
+</div>
+<% } %>
