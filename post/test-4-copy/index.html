@@ -1,4 +1,62 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"><meta content="ie=edge" http-equiv="X-UA-Compatible"><meta content="#fff" id="theme-color" name="theme-color"><script>"use strict";!function(){var t;function o(e){window.__theme=e,t=e,window.requestAnimationFrame(function(){document.documentElement.setAttribute("data-theme",e),document.getElementById("theme-color").setAttribute("content","light"==e?"#fafafa":"#101213")})}if(window.setCookie=function(e,t){var o=2<arguments.length&&void 0!==arguments[2]?arguments[2]:1,n=3<arguments.length&&void 0!==arguments[3]?arguments[3]:"/",i=new Date(Date.now()+36e5*o).toUTCString();document.cookie=e+"="+encodeURIComponent(t)+"; expires="+i+"; path="+n},window.getCookie=function(n){return document.cookie.split("; ").reduce(function(e,t){var o=t.split("=");return o[0]===n?decodeURIComponent(o[1]):e},"")},window.deleteCookie=function(e){var t=1<arguments.length&&void 0!==arguments[1]?arguments[1]:"/";setCookie(e,"",-1,t)},""==(t=getCookie("theme"))){var e=(new Date).getHours();t=19<=e||e<6?"dark":"light"}window.__setPreferredTheme=function(e){o(e),setCookie("theme",e,12)};var n=window.matchMedia("(prefers-color-scheme: dark)");function i(){dataLayer.push(arguments)}n.addListener(function(e){window.__setPreferredTheme(e.matches?"dark":"light")}),o(t||(n.matches?"dark":"light")),window.dataLayer=window.dataLayer||[],i("js",new Date),i("config","G-EKMENJMZXG")}()</script><title>test 4 - Mizore&#39;s Blog</title><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-1x.png"><link rel="stylesheet" href="/css/style.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js" as="script" crossorigin><meta content="on" http-equiv="x-dns-prefetch-control"><link rel="preconnect" href="https://image.mizore.cn/" crossorigin><link rel="dns-prefetch" href="https://image.mizore.cn/"><link rel="preconnect" href="https://ga-hit-count.vercel.app/" crossorigin><link rel="dns-prefetch" href="https://ga-hit-count.vercel.app/"><link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin><link rel="dns-prefetch" href="https://www.googletagmanager.com/"><link rel="preconnect" href="https://www.google-analytics.com/" crossorigin><link rel="dns-prefetch" href="https://www.google-analytics.com/"><meta content="telephone=no" name="format-detection"><link href="https://blog.iwz.me/post/test-4-copy/" rel="canonical"><meta property="og:title" content="test 4 - Mizore&#39;s Blog"><meta property="og:description" content="function loadScript(url, callback, crossorigin = true) {
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"><meta content="ie=edge" http-equiv="X-UA-Compatible"><meta content="#fff" id="theme-color" name="theme-color"><script>(() => {
+      let preferredTheme
+      window.setCookie = (name, value, hours = 1, path = '/') => {
+        // 1000*60*60 = 36e5
+        // 1000*60*60*24 = 864e5
+        const expires = new Date(Date.now() + hours * 36e5).toUTCString()
+        document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path
+      }
+
+      window.getCookie = (name) => {
+        return document.cookie.split('; ').reduce((r, v) => {
+          const parts = v.split('=')
+          return parts[0] === name ? decodeURIComponent(parts[1]) : r
+        }, '')
+      }
+
+      window.deleteCookie = (name, path = '/') => {
+        setCookie(name, '', -1, path)
+      }
+
+      function setTheme(newTheme) {
+        window.__theme = newTheme
+        preferredTheme = newTheme
+        window.requestAnimationFrame (() => {
+          document.documentElement.setAttribute('data-theme', newTheme)
+          document.getElementById('theme-color').setAttribute('content', (newTheme == 'light') ? '#fafafa' : '#101213')
+        })
+      }
+
+      // try {
+      //   preferredTheme = localStorage.getItem('theme')
+      // } catch (err) {}
+      preferredTheme = getCookie('theme')
+
+      if (preferredTheme == '') {
+        const h = new Date().getHours()
+        preferredTheme = (h >= 19 || h < 6) ? 'dark' : 'light'
+      }
+
+      window.__setPreferredTheme = function (newTheme) {
+        setTheme(newTheme)
+        // try {
+        //   localStorage.setItem('theme', newTheme)
+        // } catch (err) { }
+        setCookie('theme', newTheme, 12)
+      }
+
+      const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      darkQuery.addListener(function (e) {
+        window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+      })
+
+      setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+
+      window.dataLayer = window.dataLayer || []
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date())
+      gtag('config', 'G-EKMENJMZXG')
+    })()</script><title>test 4 - Mizore&#39;s Blog</title><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-1x.png"><link rel="stylesheet" href="/css/style.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js" as="script" crossorigin><meta content="on" http-equiv="x-dns-prefetch-control"><link rel="preconnect" href="https://image.mizore.cn/" crossorigin><link rel="dns-prefetch" href="https://image.mizore.cn/"><link rel="preconnect" href="https://ga-hit-count.vercel.app/" crossorigin><link rel="dns-prefetch" href="https://ga-hit-count.vercel.app/"><link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin><link rel="dns-prefetch" href="https://www.googletagmanager.com/"><link rel="preconnect" href="https://www.google-analytics.com/" crossorigin><link rel="dns-prefetch" href="https://www.google-analytics.com/"><meta content="telephone=no" name="format-detection"><link href="https://blog.iwz.me/post/test-4-copy/" rel="canonical"><meta property="og:title" content="test 4 - Mizore&#39;s Blog"><meta property="og:description" content="function loadScript(url, callback, crossorigin = true) {
   const script = document.createElement(&#39;script&#39;)
   script.src = url
   script.type = &#39;text/ja"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.iwz.me/post/test-4-copy/"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/how-i-manage-my-dotfiles.3778461.2a102d47deb81b2bc575b373d1d6a127.gif"><style>.post-header{background:rgba(204,204,204,.2)}.post-header_image{color:transparent}.post-header:not(.__loaded)>.post-header_image:not(.loaded){visibility:hidden}.svg-inline--fa,svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa.fa-w-16{width:1em}.fa-pulse{-webkit-animation:fa-spin 1s steps(8) infinite;animation:fa-spin 1s steps(8) infinite}.svg-inline--fa{display:inline-block;height:1em;vertical-align:-.125em;font-size:inherit}@-webkit-keyframes fa-spin{0%{transform:rotate(0)}to{transform:rotate(1turn)}}@keyframes fa-spin{0%{transform:rotate(0)}to{transform:rotate(1turn)}}.hide{display:none!important}</style><link rel="preload" href="/js/app.js" as="script"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Mizore's Blog" type="application/atom+xml"></head><body data-instant-intensity="viewport"><header class="header"><nav class="navbar"><div class="navbar-left"><a href="/" title="Mizore&#39;s Blog" class="site-title">Mizore&#39;s Blog</a></div><div class="navbar-right"><div title="Search" class="search"><svg class="icon-search"><use xlink:href="#svg-search"/></svg></div><div class="searchbox" style="display:none"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."> <a class="searchbox-close" href="javascript:;">×</a></div></div><div class="searchbox-body"></div></div></div><div title="Switch Theme" id="switch-theme" class="switch-theme"><svg id="sun" class="icon-sun"><use xlink:href="#svg-sun"/></svg><svg id="moon" class="icon-moon"><use xlink:href="#svg-moon"/></svg></div></div></nav></header><main class="main"><article class="post-info"><h1 class="post-title">test 4</h1><p class="post-meta"><span title="Sun Aug 23 2020 20:37:26 GMT+0800">Posted&nbsp;<time id="date" datetime="Sun Aug 23 2020 20:37:26 GMT+0800">2020-08-23</time></span> &middot; <span title="Fri Aug 21 2020 14:37:26 GMT+0800">Last&nbsp;edited&nbsp;<time id="last_updated" datetime="Fri Aug 21 2020 14:37:26 GMT+0800">2020-08-21</time></span> &middot; 151&nbsp;words &middot; <strong>1&nbsp;min&nbsp;read</strong> &middot; <span class="views" data-path="/post/test-4-copy/"><svg class="svg-inline--fa fa-spinner fa-w-16 fa-pulse" role="img"><use xlink:href="#svg-views"/></svg>&nbsp;views</span></p></article><article class="post"><div class="post-header __first __loaded"><picture><source type="image/webp" srcset="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/how-i-manage-my-dotfiles.3778461.2a102d47deb81b2bc575b373d1d6a127.webp 1920w, https://cdn.jsdelivr.net/gh/0wQ/blog@f6f8ef3048d47213407e42044b28fdaf49710a99/image/how-i-manage-my-dotfiles.3778461.2a102d47deb81b2bc575b373d1d6a127.1024w.webp 1024w" sizes="calc(100vw-30px)"><img class="post-header_image unselectable" _decoding="async" crossorigin alt="test 4" src="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/how-i-manage-my-dotfiles.3778461.2a102d47deb81b2bc575b373d1d6a127.gif" src="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/how-i-manage-my-dotfiles.3778461.2a102d47deb81b2bc575b373d1d6a127.gif" srcset="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/how-i-manage-my-dotfiles.3778461.2a102d47deb81b2bc575b373d1d6a127.gif 1920w, https://cdn.jsdelivr.net/gh/0wQ/blog@f6f8ef3048d47213407e42044b28fdaf49710a99/image/how-i-manage-my-dotfiles.3778461.2a102d47deb81b2bc575b373d1d6a127.1024w.gif 1024w" sizes="calc(100vw-30px)"></picture></div><div class="post-content"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadScript</span>(<span class="hljs-params">url, callback, crossorigin = <span class="hljs-literal">true</span></span>) </span>&#123;
@@ -28,4 +86,212 @@
   <span class="hljs-attribute">overflow-wrap</span>: break-word;
   <span class="hljs-attribute">border-radius</span>: .<span class="hljs-number">25em</span>;
   <span class="hljs-attribute">vertical-align</span>: .<span class="hljs-number">1em</span>
-&#125;</code></pre><p><code>Consolas,Monaco,SFMono-Regular,&#39;Andale M ono&#39;,&#39;Liberation Mono&#39;,&#39;Ubuntu Mono&#39;,Menlo,monospace;</code> 123214312421515</p></div></article><nav class="post-navigation"><a href="/post/test-4/" title="test 4" class="post-navigation_prev">test 4</a> <a href="/post/test-5/" title="test 5" class="post-navigation_next">test 5</a></nav><article id="comment" class="comment"><div id="disqus_thread"></div></article><article class="author"><picture><source srcset="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-1x.webp, https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-2x.webp 2x" type="image/webp"><img src="/image/avatar.png" srcset="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-1x.png, https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-2x.png 2x" crossorigin decoding="async" _loading="lazy" alt="Mizore" class="author_image unselectable" style="max-width:100px;height:100px"></picture><h1 class="author_site-title"><a href="/" alt="Mizore&#39;s Blog">Mizore&#39;s Blog</a></h1><p class="author_intro">うまくなりたい、とくべつになりたい</p></article></main><footer class="footer"><div class="footer_views">Total Views <span id="views_all_pv"><svg class="svg-inline--fa fa-spinner fa-w-16 fa-pulse" role="img"><use xlink:href="#svg-views"/></svg></span>, Users <span id="views_all_users"><svg class="svg-inline--fa fa-spinner fa-w-16 fa-pulse" role="img"><use xlink:href="#svg-views"/></svg></span>.</div><div class="footer_links">Copyright © 2018 - 2021 Mizore&#39;s Blog.<br>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>. Theme by Spencer & Mizore.</div></footer><svg id="svg-container" style="display:none"></svg><script>"use strict";window.page_type="post",window.search_path="/search.json"</script><script>"use strict";function loadScript(t,n){var o=!(2<arguments.length&&void 0!==arguments[2])||arguments[2];window.requestAnimationFrame(function(){var e=document.createElement("script");e.src=t,e.type="text/javascript",e.async=!0,o&&(e.crossOrigin="anonymous"),n&&(e.onload=n),document.head.appendChild(e)})}function loadStyle(t){var n=!(1<arguments.length&&void 0!==arguments[1])||arguments[1];window.requestAnimationFrame(function(){var e=document.createElement("link");e.href=t,e.rel="stylesheet",n&&(e.crossOrigin="anonymous"),document.head.appendChild(e)})}loadScript("https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js",function(){new LazyLoad({elements_selector:".lazy",threshold:200,callback_enter:function(e){e.parentNode.parentNode.classList.add("__loaded")}}),setTimeout(function(){new LazyLoad({elements_selector:".views",threshold:100,unobserve_entered:!0,callback_enter:function(t){var e=location.hostname,n=t.getAttribute("data-path"),o=function(e){window.requestAnimationFrame(function(){t.innerHTML="".concat(e,"&nbsp;views")})};fetch("https://ga-hit-count.vercel.app/api/ga?hostname=".concat(e,"&page=").concat(n)).then(function(e){return e.json()}).then(function(e){var t=e[0].hit;o(void 0!==t?t:0),console.log(n,"views: ".concat(t),e)}).catch(function(e){o(0),console.error(e)})}}),new LazyLoad({elements_selector:".footer_views",threshold:100,unobserve_entered:!0,callback_enter:function(n){var o=location.hostname,a=function(e,t){window.requestAnimationFrame(function(){n.querySelector("#views_all_pv").innerHTML="".concat(e),n.querySelector("#views_all_users").innerHTML="".concat(t)})};fetch("https://ga-hit-count.vercel.app/api/ga_all?hostname=".concat(o)).then(function(e){return e.json()}).then(function(e){var t=e[0].hit,n=e[0].users;a(void 0!==t?t:0,void 0!==n?n:0),console.log(o,"views: ".concat(t),"users: ".concat(n),e)}).catch(function(e){a(0,0),console.error(e)})}})},0),setTimeout(function(){new LazyLoad({elements_selector:".search",threshold:100,unobserve_entered:!0,callback_enter:function(){loadScript("/js/search.js")}})},0),setTimeout(function(){if("post"==window.page_type&&(new LazyLoad({elements_selector:"pre code.hljs",threshold:200,unobserve_entered:!0,callback_enter:function(e){loadStyle("/css/hl.css");var t=document.querySelectorAll("pre code.hljs");t.length&&t.forEach(function(e){e.setAttribute("data-lang",(e.classList[1]||"plain").toLocaleLowerCase())})}}),document.getElementById("disqus_thread"))){var e=function(){loadStyle("https://cdn.jsdelivr.net/npm/disqusjs/dist/disqusjs.css"),loadScript("https://cdn.jsdelivr.net/npm/disqusjs/dist/disqus.js",function(){new DisqusJS({shortname:"moe-blog",api:"https://disqus-proxy.vercel.app/api/",apikey:"OdL6EIoIeMbLbCG0XajcLJSkiiPibBzbnhpJdEHU9bXp8CcPeV7vPiuUbbc0WMEI"})})};window.location.hash.indexOf("comment")<0?new LazyLoad({elements_selector:"#comment",threshold:350,unobserve_entered:!0,callback_enter:function(){window.requestIdleCallback(e)}}):e()}},0)}),document.addEventListener("DOMContentLoaded",function(){loadScript("/js/app.js",null,!1),document.getElementById("switch-theme").addEventListener("click",function(){window.__setPreferredTheme("light"==document.documentElement.getAttribute("data-theme")?"dark":"light")}),setTimeout(function(){loadScript("https://www.googletagmanager.com/gtag/js?id=G-EKMENJMZXG")},1500)}),window.addEventListener("load",function(){setCookie("nopush",1,24),window.requestIdleCallback(function(){loadScript("https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js")})})</script></body></html>
+&#125;</code></pre><p><code>Consolas,Monaco,SFMono-Regular,&#39;Andale M ono&#39;,&#39;Liberation Mono&#39;,&#39;Ubuntu Mono&#39;,Menlo,monospace;</code> 123214312421515</p></div></article><nav class="post-navigation"><a href="/post/test-4/" title="test 4" class="post-navigation_prev">test 4</a> <a href="/post/test-5/" title="test 5" class="post-navigation_next">test 5</a></nav><article id="comment" class="comment"><div id="disqus_thread"></div></article><article class="author"><picture><source srcset="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-1x.webp, https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-2x.webp 2x" type="image/webp"><img src="/image/avatar.png" srcset="https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-1x.png, https://cdn.jsdelivr.net/gh/0wQ/blog@52f6b19b2865615c405ccc6fea375451cfb57b53/image/avatar-2x.png 2x" crossorigin decoding="async" _loading="lazy" alt="Mizore" class="author_image unselectable" style="max-width:100px;height:100px"></picture><h1 class="author_site-title"><a href="/" alt="Mizore&#39;s Blog">Mizore&#39;s Blog</a></h1><p class="author_intro">うまくなりたい、とくべつになりたい</p><p class="author_links unselectable"><a title="RSS" href="/atom.xml" target="_blank" data-no-instant><svg width="16" height="16" role="img"><use xlink:href="#svg-rss" style="color:#f5a623"/></svg></a><a title="Twitter" href="//twitter.com/wsly47" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" role="img"><use xlink:href="#svg-twitter" style="color:#1da1f2"/></svg></a><a title="Telegram" href="//t.me/Azunyann" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" role="img"><use xlink:href="#svg-telegram" style="color:#179cde"/></svg></a><a title="Github" href="//github.com/0wQ/" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" role="img"><use xlink:href="#svg-github" style="color:var(--title-color)"/></svg></a></p></article></main><footer class="footer"><div class="footer_views">Total Views <span id="views_all_pv"><svg class="svg-inline--fa fa-spinner fa-w-16 fa-pulse" role="img"><use xlink:href="#svg-views"/></svg></span>, Users <span id="views_all_users"><svg class="svg-inline--fa fa-spinner fa-w-16 fa-pulse" role="img"><use xlink:href="#svg-views"/></svg></span>.</div><div class="footer_links">Copyright © 2018 - 2021 Mizore&#39;s Blog.<br>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>. Theme by Spencer & Mizore.</div></footer><svg id="svg-container" style="display:none"></svg><script>window.page_type="post",window.search_path="/search.json"</script><script>function loadScript(url, callback, crossorigin = true) {
+    window.requestAnimationFrame(() => {
+      const script = document.createElement('script')
+      script.src = url
+      script.type = 'text/javascript'
+      script.async = true
+      if (crossorigin) script.crossOrigin = 'anonymous'
+      if (callback) script.onload = callback
+      document.head.appendChild(script)
+    })
+  }
+  function loadStyle(url, crossorigin = true) {
+    window.requestAnimationFrame(() => {
+      const link = document.createElement('link')
+      link.href = url
+      link.rel = 'stylesheet'
+      if (crossorigin) link.crossOrigin = 'anonymous'
+      document.head.appendChild(link)
+    })
+  }
+  loadScript('https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js', () => {
+    new LazyLoad({
+      elements_selector: '.lazy',
+      threshold: 200,
+      callback_enter: element => {
+        element.parentNode.parentNode.classList.add('__loaded')
+      }
+    })
+    setTimeout(() => {
+      new LazyLoad({
+        elements_selector: '.views',
+        threshold: 100,
+        unobserve_entered: true,
+        callback_enter: element => {
+          const hostname = location.hostname,
+            path = element.getAttribute('data-path'),
+            pushViews = hit => {
+              window.requestAnimationFrame(() => { element.innerHTML = `${hit}&nbsp;views` })
+            }
+          fetch(`https://ga-hit-count.vercel.app/api/ga?hostname=${hostname}&page=${path}`)
+            .then(res => res.json())
+            .then(d => {
+              const hit = d[0].hit
+              pushViews(hit !== undefined ? hit : 0)
+              console.log(path, `views: ${hit}`, d)
+            })
+            .catch(err => {
+              pushViews(0)
+              console.error(err)
+            })
+        }
+      })
+      new LazyLoad({
+        elements_selector: '.footer_views',
+        threshold: 100,
+        unobserve_entered: true,
+        callback_enter: element => {
+          const hostname = location.hostname,
+            pushViews = (hit, users) => {
+              window.requestAnimationFrame(() => {
+                element.querySelector('#views_all_pv').innerHTML = `${hit}`
+                element.querySelector('#views_all_users').innerHTML = `${users}`
+              })
+            }
+          fetch(`https://ga-hit-count.vercel.app/api/ga_all?hostname=${hostname}`)
+            .then(res => res.json())
+            .then(d => {
+              const hit = d[0].hit
+              const users = d[0].users
+              pushViews(hit !== undefined ? hit : 0, users !== undefined ? users : 0)
+              console.log(hostname, `views: ${hit}`, `users: ${users}`, d)
+            })
+            .catch(err => {
+              pushViews(0, 0)
+              console.error(err)
+            })
+        }
+      })
+    }, 0)
+    setTimeout(() => {
+      new LazyLoad({
+        elements_selector: '.search',
+        threshold: 100,
+        unobserve_entered: true,
+        callback_enter: () => {
+          // window.requestIdleCallback(() => { loadScript('/js/search.js') })
+          loadScript('/js/search.js')
+        },
+      })
+    }, 0)
+    setTimeout(() => {
+      if (window.page_type == 'post') {
+        new LazyLoad({
+          elements_selector: 'pre code.hljs',
+          threshold: 200,
+          unobserve_entered: true,
+          callback_enter: element => {
+            loadStyle('/css/hl.css')
+            const codeBlocks = document.querySelectorAll('pre code.hljs')
+            if (codeBlocks.length) {
+              codeBlocks.forEach(element => {
+                element.setAttribute('data-lang', (element.classList[1] || 'plain').toLocaleLowerCase())
+              })
+            }
+          },
+        })
+        // new LazyLoad({
+        //   elements_selector: '[data-zoomable]',
+        //   threshold: 300,
+        //   unobserve_entered: true,
+        //   callback_enter: element => {
+        //     window.requestIdleCallback(() => {
+        //       loadScript('https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js', () => {
+        //         mediumZoom('[data-zoomable]')
+        //       })
+        //     })
+        //   }
+        // })
+        // if (document.getElementById('comment')) {
+        if (document.getElementById('disqus_thread')) {
+          const loadComment = () => {
+            loadStyle('https://cdn.jsdelivr.net/npm/disqusjs/dist/disqusjs.css')
+            loadScript('https://cdn.jsdelivr.net/npm/disqusjs/dist/disqus.js', () => {
+              new DisqusJS({
+                shortname: 'moe-blog',
+                // api: 'https://disqus.moelab.top/api/',
+                api: 'https://disqus-proxy.vercel.app/api/',
+                apikey: 'OdL6EIoIeMbLbCG0XajcLJSkiiPibBzbnhpJdEHU9bXp8CcPeV7vPiuUbbc0WMEI',
+              })
+            })
+
+            // loadScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js', () => {
+            //   new Waline({
+            //     el: '#waline',
+            //     path: location.pathname,
+            //     serverURL: 'https://comment-blog.vercel.app',
+            //     emojiCDN: '//i0.hdslb.com/bfs/emote/',
+            //     // 表情title和图片映射
+            //     emojiMaps: {
+            //       "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            //       "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            //       "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            //       "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            //       "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            //       "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            //       "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            //       "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            //       "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            //       "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            //       "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            //       "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            //       "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            //       "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            //       "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            //       "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            //       "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            //       "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            //       "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            //       "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            //       "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            //       // ... 更多表情
+            //     }
+            //   })
+            // })
+          }
+          window.location.hash.indexOf('comment') < 0 ?
+            new LazyLoad({
+              elements_selector: '#comment',
+              threshold: 350,
+              unobserve_entered: true,
+              callback_enter: () => { window.requestIdleCallback(loadComment) },
+            }) : loadComment()
+        }
+      }
+    }, 0)
+  })
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // loadScript('/js/svg.js', null, false)
+    loadScript('/js/app.js', null, false)
+    // loadStyle('/css/style-low.css', false)
+    document.getElementById('switch-theme').addEventListener('click', () => {
+      // document.documentElement.classList.add('transition')
+      window.__setPreferredTheme((document.documentElement.getAttribute('data-theme') == 'light') ? 'dark' : 'light')
+    })
+    // loadScript('https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js')
+    setTimeout(() => {
+      loadScript('https://www.googletagmanager.com/gtag/js?id=G-EKMENJMZXG')
+    }, 1500)
+  })
+
+  window.addEventListener('load', () => {
+    setCookie('nopush', 1, 24)
+    window.requestIdleCallback(() => {
+      loadScript('https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js')
+      // const preload = (url, as = 'fetch') => {
+      //   const link = document.createElement('link')
+      //   link.rel = 'preload'
+      //   link.href = url
+      //   link.as = as
+      //   link.crossOrigin = 'anonymous'
+      //   document.head.appendChild(link)
+      // }
+      // if (window.page_type == 'post') {
+      //   preload('https://cdn.jsdelivr.net/npm/disqusjs/dist/disqusjs.css', 'style')
+      //   preload('https://cdn.jsdelivr.net/npm/disqusjs/dist/disqus.js', 'script')
+      // }
+    })
+  })</script></body></html>
