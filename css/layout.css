@@ -1,0 +1,21 @@
+.main {
+  margin: 0 auto;
+  padding: 1.5vw 15px 0;
+}
+.post-content img.lazy:not(.loaded):not(.error) {
+  padding-bottom: 52.286%;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space) 15px;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 0.9em;
+  font-family: var(--base-font-family);
+}
+.footer .footer_links a {
+  color: currentColor;
+}

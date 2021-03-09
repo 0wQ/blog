@@ -1,0 +1,7 @@
+.medium-zoom-overlay {
+  background: var(--bg-content-color) !important;
+}
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 99;
+}

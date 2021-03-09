@@ -1,0 +1,10 @@
+.post-content img {
+  max-height: 90vh;
+  border-radius: calc(var(--radius) / 2);
+}
+.post-content img.lazy:not(.loaded):not(.error) {
+  padding-bottom: 52.286%;
+}
+img.post-header_image.lazy.loaded {
+  visibility: visible;
+}

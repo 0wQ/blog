@@ -1,0 +1,30 @@
+.paginator {
+  margin: 0 auto;
+  max-width: var(--content-width);
+  text-align: center;
+  line-height: 2.5em;
+}
+.extend {
+  text-decoration: none;
+}
+.page-number,
+.extend {
+  margin: 0 10px;
+  padding: 3px 10px;
+  border: 2px dashed var(--link-color);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .page-number,
+  .extend {
+    border-width: 1.999px;
+  }
+}
+.page-number:not(.current):hover,
+.extend:hover {
+  opacity: 0.5 !important;
+}
+.current,
+.space {
+  border-color: var(--body-color);
+  opacity: 0.5;
+}
