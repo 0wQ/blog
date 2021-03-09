@@ -1,7 +1,1 @@
-.medium-zoom-overlay {
-  background: var(--bg-content-color) !important;
-}
-.medium-zoom-overlay,
-.medium-zoom-image--opened {
-  z-index: 99;
-}
+.medium-zoom-overlay{background:var(--bg-content-color)!important}.medium-zoom-image--opened,.medium-zoom-overlay{z-index:99}

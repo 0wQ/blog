@@ -1,14 +1,1 @@
-.footer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--space) 15px;
-  text-align: center;
-  font-size: 0.9em;
-  font-family: var(--base-font-family);
-  line-height: 1.8;
-}
-.footer .footer_links a {
-  color: currentColor;
-}
+.footer{display:flex;align-items:center;flex-direction:column;justify-content:center;padding:var(--space) 15px;text-align:center;font-size:.9em;font-family:var(--base-font-family);line-height:1.8}.footer .footer_links a{color:currentColor}
